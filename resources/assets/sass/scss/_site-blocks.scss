@@ -1,0 +1,372 @@
+.site-blocks-cover {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+	background-position: center center;
+	overflow: hidden;
+	position: relative;
+	.lead {
+		font-family: $font-family-2;
+		font-size: 1.3rem;
+		color: lighten($black, 10%);
+	}
+	&.overlay {
+		position: relative;
+		&:before {
+			position: absolute;
+			content: "";
+			left: 0;
+			bottom: 0;
+			right: 0;
+			top: 0;
+			z-index: 2;
+			background: rgba($white, 0);
+			@include media-breakpoint-down(md) {
+				background: rgba($white, .5);
+			}
+		}
+	}
+	
+	&, & > .container , & > .container > .row {
+		min-height: 600px;
+		height: 100vh;
+	}
+	
+	.text-intro {
+		position: relative;
+		z-index: 2;
+	}
+	h1 {
+		font-size: 3rem;
+		font-family: $font-family-2;
+	}
+	.img-face {
+		position: absolute;
+		right: -5%;
+		bottom: 0;
+		z-index: 1;
+		max-width: 950px;
+		@include media-breakpoint-down(md) {
+			right: -25%;
+		}
+	}
+	
+}
+.section-title {
+	position: relative;
+	padding-bottom: 20px;
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 2px;
+		background: $primary;
+		width: 50px;
+	}
+	&.text-center {
+		&:after {
+			left: 50%;
+			transform: translateX(-50%);
+		}	&:after {
+			background: $white;
+		}
+	}
+	&.text-white {
+
+	}
+}
+.position-relative {
+	position: relative;
+}
+
+.service {
+	padding: 30px;
+	background: $white;
+	box-shadow: 0 1px 2px 0px rgba($black, .1);
+	transition: .3s all ease-in-out;
+	top: 0;
+	position: relative;
+	&:hover {
+		box-shadow: 0 8px 50px -5px rgba($black, .1);
+		top: -2px;
+	}
+	.service-number {
+		flex: 0 0 60px;
+		span {
+			position: relative;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			border-radius: 50%;
+			background: $primary;
+			display: inline-block;
+			color: $white;
+			text-align: center;	
+		}
+	}
+	.service-about {
+		*:last-child {
+			margin-bottom: 0;
+		}
+		h3 {
+			font-size: 1.2rem;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.gal-item {
+	margin-bottom: 30px;
+}
+
+.filters {
+	.btn {
+		border-color: transparent;
+		font-size: .8rem;
+		margin: 5px;
+		letter-spacing: .2rem;
+		background: rgba($dark, .05);
+		color: $dark;
+		padding: 5px 20px;
+		border-radius: 30px!important;
+		border: none!important;
+		text-transform: uppercase;
+		&:hover, &:focus, &:active {
+			border-color: transparent!important;
+			background: rgba($dark, .3)!important;
+			color: $black;
+		}
+		&.active {
+			background: $black!important;
+			color: $white;
+			border-color: $black!important;
+			// box-shadow: 0 4px 15px -3px rgba($primary, .5)!important;
+		}
+	}
+}
+
+
+/* Isotope Transitions
+------------------------------- */
+.isotope,
+.isotope .item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:         top, left, opacity;
+          transition-property:         transform, opacity;
+}
+  
+  
+/* responsive media queries */
+
+@media (max-width: 768px) {
+ 
+}
+
+.item { 
+  border: none;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  a {
+  	display: block;
+  	overflow: hidden;
+  	position: relative;
+  	border-radius: 4px;
+	  img {
+	  	position: relative;
+	  	transform: scale(1.0);
+	  	transition: .3s all ease-in-out;
+	  }
+  }
+  .item-wrap {
+  	display: block;
+  	position: relative;
+  	&:after {
+  		z-index: 2;
+			position: absolute;
+			content: "";
+			top: 0; left: 0; right: 0; bottom: 0;
+			background: rgba($black, .4);
+			visibility: hidden;
+			opacity: 0;
+			transition: .3s all ease-in-out;
+  	}
+  	> span {
+  		position: absolute;
+  		top: 50%;
+  		left: 50%;
+  		z-index: 3;
+  		transform: translate(-50%, -50%) scale(0.0);
+			color: $white;
+			font-size: 1.7rem;
+			opacity: 0;
+			visibility: hidden;
+			// margin-top: 10px;
+			transition: .3s all ease;
+  	}
+  	&:hover {
+  		&:after {
+  			opacity: 1;
+  			visibility: visible;
+  		}
+  		span {
+  			margin-top: 0px;
+  			opacity: 1;
+  			visibility: visible;
+  			transform: translate(-50%, -50%) scale(1.0);
+  		}
+  	}
+  }
+
+  &:hover {
+  	a {
+			img {
+				transform: scale(1.05);
+	  		transition: .3s all ease-in-out;
+			}
+		}
+  }
+}
+
+.slide-one-item {
+	.slide {
+		text-align: center;
+		blockquote {
+			position: relative;
+			max-width: 700px;
+			font-size: 1.2rem;
+			color: $black;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			font-style: italic;
+			color: $white;
+			
+			
+		}
+		cite {
+			margin-top: 50px;
+			font-size: 1rem;
+			color: rgba($white, .5);
+		}
+	}
+
+	.owl-dots {
+		text-align: center;
+		.owl-dot {
+			display: inline-block;
+			> span {
+				margin: 7px;
+				background: rgba($white, .3);
+				display: inline-block;
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+			}
+			&:hover {
+				> span {
+					background: rgba($white, .5);
+				}
+			}
+			&.active {
+				> span {
+					background: $white;
+				}
+			}
+		}
+	}
+}
+
+.blog_entry {
+	img {
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+	}
+	> div {
+		border: 1px solid #eee;
+		border-top: none;
+	}
+	h3 {
+		font-size: 1.3rem;
+		a {
+			color: $black;
+		}
+	}
+	.date {
+		color: lighten($black, 60%);
+		display: block;
+		font-size: .9rem;
+		margin-bottom: 15px;
+	}
+	.more {
+		a {
+			position: relative;
+			color: $black;
+			padding-bottom: 10px;
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 2px;
+				background: $black;
+				transition: .3s all ease;
+			}
+			&:hover {
+				&:before {
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+
+
+.form {
+	.form-control {
+		border: none;
+		border-radius: 0px;
+		border-bottom: 1px solid #eee;
+		&:active, &:focus {
+			border-color: $black;
+		}
+	}
+}
+
+.footer {
+	font-size: .9rem;
+	.footer-title {
+		font-size: 1.1rem;
+		margin-bottom: 30px;
+	}
+	ul {
+		li {
+			margin-bottom: 10px;
+		}
+	}
+	a {
+		color: darken(#eee, 40%);
+		&:hover {
+			color: $black;
+		}
+	}
+}
